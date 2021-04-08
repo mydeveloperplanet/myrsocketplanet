@@ -75,4 +75,9 @@ public class RsocketClientController {
         return ResponseEntity.ok().contentType(MediaType.TEXT_EVENT_STREAM).body(numberOfNotifications);
     }
 
+    @GetMapping("/close")
+    public void close() {
+        rSocketRequester.rsocketClient().dispose();
+    }
+
 }
